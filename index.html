@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="LAB">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="box">
+    <div ng-controller="buy" class="list">
+      <div class="header">Купити</div>
+      <p ng-repeat="item in data.buy">
+        Купити: {{item.amount}} {{item.name}}
+        <button ng-click="buy(item.id)" class="button button-position">Куплено</button>
+      </p>
+      <div ng-if="data.buy.length==0">
+        <p>Усе куплено</p>
+      </div>
+    </div>
+
+    <div ng-controller="bought" class="list">
+      <div class="header">Куплено</div>
+      <p ng-repeat="item in data.bougth">
+        Куплено: {{item.amount}} {{item.name}}
+      </p>
+      <div ng-if="data.bougth.length==0">
+        <p> Ще нічого не куплено</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
